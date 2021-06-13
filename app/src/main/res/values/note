@@ -1,0 +1,74 @@
+
+Constraint layout:
+1. Reduces nesting of view groups
+2. Easier maintenance
+
+
+Type of constrain
+1. Relative positioning
+2. Center positioning
+3. Circular positioning
+4. dimension positioning
+5. Chains
+
+1. Relative Positioning:
+It is the constrain a given side of widget relative to a side of any other widget or to the parent
+view group either horizontally or vertically
+
+app:layout_constraint[Source Side]_to[Target Side]Of="[Target Id OR parent]"
+
+2. Center Positioning:
+
+center positioning = RelativeLayout's
+                     ~ layout_centerInParent
+                     ~ layout_centerVertical
+                     ~ layout_centerHorizontal
+
+
+For centering horizontally or vertically we need to relatively constraint the widget between two points
+The target can either be widget's anchor point or the parent's anchor point.
+
+BIAS
+It favours one side over the other
+
+app:layout_constraintHorizontal_bias="[float value from 0 to 1]"
+app:layout_constraintVertical_bias="[float value from 0 to 1]"
+
+3. Center positioning
+It constraint the center of a widget relative to the center of another widget
+
+app:layout_constrainCircle="[reference another widget id]"
+app:layout_constraintCircleRadius="[the distance to the other widget's center in dp]"
+app:layout_constraintCircleAngle="[The angle a widget should be at (in degree, from 0 to 360) of type int]"
+
+
+4. Dimension Constrain:
+     ~ Hardcode value in dp
+     ~ WRAP_CONTENT
+     ~ MATCH_CONSTRAINT
+
+WRAP_CONTENT
+    modifier:
+    1. android:minWidth="[value in dp]"
+    2. android:maxWidth="[value in dp]"
+    3. android:minHeight="[value in dp]"
+    4. android:maxHeight="[value in dp]"
+    note: This modifier are only valid with WRAP_CONTENT and not with MATCH_CONSTRAINT
+
+MATCH_CONSTRAINT
+    ~ The widget that specifies its dimension to be MATCH_CONSTRAINT will take all the available space.
+    ~ We use 0dp to represent MATCH_CONSTRAINT in constraintLayout.
+    ~ modifiers:
+        app:layout_constraintWidth_min="[value in dp]"
+        app:layout_constraintWidth_max="[value in dp]"
+        app:layout_constraintHeight_max="[value in dp]"
+        app:layout_constraintHeight_min="[value in dp]"
+        app:layout_constraintWidth_percent="[float value range from 0 to 1]"
+        app:layout_constraintHeight_percent="[float value range from 0 to 1]"
+
+
+Ratio:
+    ~ In ConstraintLayout we can define the dimension of a widget as ratio of the other.
+    ~ app:layout_constraintDimensionRatio="[float value range from 0 to 1]"
+    ~ Setting one or both view's dimension to match constraint(0dp)
+    ~ Opposite sides of the widget needs to be constrained.
