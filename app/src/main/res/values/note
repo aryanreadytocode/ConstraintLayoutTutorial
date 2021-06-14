@@ -72,3 +72,12 @@ Ratio:
     ~ app:layout_constraintDimensionRatio="[float value range from 0 to 1]"
     ~ Setting one or both view's dimension to match constraint(0dp)
     ~ Opposite sides of the widget needs to be constrained.
+
+Chains:
+    ~ Chain constraint of ConstraintLayout is used to create bidirectional connection between the widgets
+    ~ There are three style we can choose from:
+        1. Spread
+        2. Spread Inside
+        3. Packed
+    ~ app:layout_constraintHorizontal_chainStyle="[spread/spread_inside/packed]"
+    ~ app:layout_constraintVertical_chainStyle="[spread/spread_inside/packed]"
